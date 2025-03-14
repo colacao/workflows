@@ -1,0 +1,241 @@
+{
+  "last_node_id": 5,
+  "last_link_id": 4,
+  "nodes": [
+    {
+      "id": 2,
+      "type": "JanusImageUnderstanding",
+      "pos": [
+        1704.5950927734375,
+        490.5413513183594
+      ],
+      "size": [
+        400,
+        236
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "JANUS_MODEL",
+          "link": 1
+        },
+        {
+          "name": "processor",
+          "type": "JANUS_PROCESSOR",
+          "link": 2
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": [
+            4
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "JanusImageUnderstanding"
+      },
+      "widgets_values": [
+        "Describe this image in detail.",
+        800938269136363,
+        "randomize",
+        0.1,
+        0.95,
+        512
+      ]
+    },
+    {
+      "id": 3,
+      "type": "show_text_party",
+      "pos": [
+        1711.9310302734375,
+        787.623046875
+      ],
+      "size": [
+        399.3566589355469,
+        161.61195373535156
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 4
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "shape": 6,
+          "links": null,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "show_text_party"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 4,
+      "type": "LoadImage",
+      "pos": [
+        1341.4952392578125,
+        639.9992065429688
+      ],
+      "size": [
+        315,
+        314
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            3
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "微信图片_20250222124127.jpg",
+        "image"
+      ]
+    },
+    {
+      "id": 1,
+      "type": "JanusModelLoader",
+      "pos": [
+        1331.4088134765625,
+        497.8769226074219
+      ],
+      "size": [
+        315,
+        78
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "JANUS_MODEL",
+          "links": [
+            1
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "processor",
+          "type": "JANUS_PROCESSOR",
+          "links": [
+            2
+          ],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "JanusModelLoader"
+      },
+      "widgets_values": [
+        "deepseek-ai/Janus-Pro-7B"
+      ]
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      2,
+      0,
+      "JANUS_MODEL"
+    ],
+    [
+      2,
+      1,
+      1,
+      2,
+      1,
+      "JANUS_PROCESSOR"
+    ],
+    [
+      3,
+      4,
+      0,
+      2,
+      2,
+      "IMAGE"
+    ],
+    [
+      4,
+      2,
+      0,
+      3,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 2,
+      "title": "理解图",
+      "bounding": [
+        1314.9044189453125,
+        366.75738525390625,
+        821.2710571289062,
+        629.23486328125
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.1,
+      "offset": [
+        -647.6382834684698,
+        -85.81959620923323
+      ]
+    },
+    "node_versions": {
+      "ComfyUI-Janus-Pro": "4400129e5c33664ae6e927162a39ba4116f44b8b",
+      "comfyui_LLM_party": "407271d6744be7ee01d5f0d511d539eb735e46fd",
+      "comfy-core": "0.3.14"
+    }
+  },
+  "version": 0.4
+}
