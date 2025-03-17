@@ -1,0 +1,85 @@
+# ========================
+# MacOS 系统文件
+# ========================
+.DS_Store
+
+# ========================
+# Windows 系统文件
+# ========================
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ========================
+# Python 项目
+# ========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# 虚拟环境
+env/
+venv/
+ENV/
+.venv/
+pip-wheel-metadata/
+
+# Python 安装包
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Jupyter Notebook 检查点
+.ipynb_checkpoints
+
+# mypy 静态检查
+.mypy_cache/
+.dmypy.json
+.pyre/
+
+# PyCharm
+.idea/
+
+# VSCode
+.vscode/
+
+# ========================
+# Node.js 项目
+# ========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ========================
+# 环境配置文件 (按需忽略)
+# ========================
+.env
+.env.local
+.env.*.local
+
+# ========================
+# 日志文件
+# ========================
+*.log
+
+# ========================
+# 临时文件
+# ========================
+*.bak
+*.tmp
+*.swp
+*.swo
+*~
+
+# ========================
+# 其他 (按需添加)
+# ========================
+# 例如数据库、媒体缓存等
+# /media/
+# *.sqlite3
